@@ -1,0 +1,26 @@
+.formwrap
+{
+    width: 50em;
+    height: 50em;
+    background: #3f3f3f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.formwrap>form
+{
+    display: flex;
+    flex-direction: column;
+}
+.parent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head1
+{
+    color: white;
+    font-size: 5.4em;
+    font-family: "montserrat_bold";
+}

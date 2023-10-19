@@ -1,0 +1,56 @@
+.parent
+{
+    max-height: 100%;
+    color: white;
+}
+.parent
+{
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+}
+.leftcont
+{
+    display: flex;
+    max-width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2em;
+}
+.head1
+{
+    font-size: 7.2em;
+    font-family: "montserrat_bold";
+}
+.head2
+{
+    font-size: 3.2em;
+    font-family: "montserrat_medium";
+}
+.head3
+{
+    font-family: "montserrat_regular";
+    font-size: 2em;
+}
+.btn1, .btn2
+{
+    padding: .6em 2.5em;
+    background: linear-gradient(90deg, #5F0A87, #A4508B);
+    outline: none;
+    border: none;
+    border-radius: 5em;
+    color: white;
+    font-family: "montserrat_regular";
+    margin-right: 1em;
+    cursor: pointer;
+}
+.rightcont>img
+{
+    max-width: 80%;
+}
+@media (max-width:900px) {
+    .rightcont
+    {
+        display: none;
+    }
+}

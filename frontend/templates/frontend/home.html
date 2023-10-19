@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/base.css'%}">
+    <link rel="stylesheet" href="{%static 'css/home.css'%}">
+
+</head>
+<body>
+    {%include 'frontend/base.html'%}
+    <div class="parent">
+        <div class="leftcont">
+                <p class="head1">MGmail</p>
+                <p class="head2">Mail across the World with Ease</p>
+                <p class="head3">A simple SMTP API made for the easy accesibility of privacy consious developers. MGmail assures full privacy between developers and clients.</p>
+            <div class="buttons">
+                <a href="/Signup"><button class="btn1">Signup</button></a>
+                <a href="/Signin"><button class="btn2" href="/signin">Signin</button></a>
+            </div>
+        </div>
+        <div class="rightcont">
+            <img src="{%static 'images/rocket.svg'%}" alt="">
+        </div>
+    </div>
+</body>
+</html>
