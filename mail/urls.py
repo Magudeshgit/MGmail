@@ -26,7 +26,7 @@ urlpatterns = [
     path('Signup/', fd.signup),
     path('Signin/', fd.signin),
     path('home/', fd.home),
-    path('logout/', fd.logout),
+    path('logout/', fd.logoutuser),
 
     path('api/', api.MGMail),
 ]

@@ -43,7 +43,7 @@ def signin(request):
 
 def logoutuser(request):
         logout(request)
-        return HttpResponseRedirect('/home/')
+        return redirect('/')
 
 @login_required(login_url='/home/')
 def userpage(request):

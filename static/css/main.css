@@ -43,7 +43,7 @@ body
     padding: 2em;
     margin-top: 5em;
 }
-.tokenbox>img
+.copy
 {
     max-width: 5%;
     opacity: 0.8;
@@ -68,6 +68,16 @@ body
     font-family: "montserrat_medium";
     color: white;
     text-decoration: underline;
+}
+.reportbox>ul
+{
+    width: 100%;
+}
+.copy2
+{
+    max-width: 4%;
+    opacity: 0.8;
+    cursor: pointer;
 }
 .reportbox>ul>li
 {

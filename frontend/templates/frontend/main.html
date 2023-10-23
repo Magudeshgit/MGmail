@@ -7,6 +7,7 @@
     <title>MGmail||User</title>
     <link rel="stylesheet" href="{%static 'css/base.css'%}">
     <link rel="stylesheet" href="{%static 'css/main.css'%}">
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" type="image/x-icon">
 </head>
 <body>
     <div class="parent">
@@ -24,11 +25,12 @@
         <div class="reportbox">
             <p>Report:</p>
             <ul>
-            <li>Username: {{request.user}}</li>
-            <li>Email: {{request.user.email}}</li>
-            <li>Joined on: {{mailstat.creation_date}}</li>
-            <li>No of Emails sent: {{mailstat.count}}</li>
-            <li>Last activity on: {{mailstat.last_activity}}</li>
+                <li class="url">API url: https://mgmail.pythonanywhere.com/ <img src="{% static 'images/copy.svg'%}" alt="copy" class="copy2"></li>    
+                <li>Username: {{request.user}}</li>
+                <li>Email: {{request.user.email}}</li>
+                <li>Joined on: {{mailstat.creation_date}}</li>
+                <li>No of Emails sent: {{mailstat.count}}</li>
+                <li>Last activity on: {{mailstat.last_activity}}</li>
             </ul>
         </div>
         <div class="toast">
@@ -37,11 +39,18 @@
     </div>
     <script>
         let img = document.querySelector('.copy')
+        let copy2 = document.querySelector('.copy2')
+        let url = "https://mgmail.pythonanywhere.com/api/"
         let tokentext = document.querySelector('.token').innerHTML
         let toast = document.querySelector('.toast')
 
         img.addEventListener('click',()=>{
             navigator.clipboard.writeText(tokentext)
+            toast.style.right="10px"
+            setTimeout(toastfunc,2000)
+        })
+        copy2.addEventListener('click',()=>{
+            navigator.clipboard.writeText(url)
             toast.style.right="10px"
             setTimeout(toastfunc,2000)
         })
