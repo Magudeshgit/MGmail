@@ -19,16 +19,37 @@
         <div class="tokenbox">
             <p class="abs">Auth token:</p>
             <p class="token">Token {{token}}</p>
+            <img src="{% static 'images/copy.svg'%}" alt="copy" class="copy">
         </div>
         <div class="reportbox">
             <p>Report:</p>
             <ul>
             <li>Username: {{request.user}}</li>
             <li>Email: {{request.user.email}}</li>
-            <li>No of Emails sent: </li>
-            <li>Last activity on: </li>
+            <li>Joined on: {{mailstat.creation_date}}</li>
+            <li>No of Emails sent: {{mailstat.count}}</li>
+            <li>Last activity on: {{mailstat.last_activity}}</li>
             </ul>
         </div>
+        <div class="toast">
+            <p>Copied to Clipboard!</p>
+        </div>
     </div>
+    <script>
+        let img = document.querySelector('.copy')
+        let tokentext = document.querySelector('.token').innerHTML
+        let toast = document.querySelector('.toast')
+
+        img.addEventListener('click',()=>{
+            navigator.clipboard.writeText(tokentext)
+            toast.style.right="10px"
+            setTimeout(toastfunc,2000)
+        })
+        function toastfunc()
+        {
+            toast.style.right="-300px"
+        }
+        
+    </script>
 </body>
 </html>

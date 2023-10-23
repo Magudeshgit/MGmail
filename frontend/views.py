@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
+from api.models import mailstat
+
 def home(request):
     return render(request,"frontend/home.html")
 
@@ -20,6 +22,7 @@ def signup(request):
                         token = Token.objects.create(user=userobj)
                         print("wallah.: ",token)
                         login(request, new_user)
+                        mailstat.objects.create(user=userobj).save()
                         return redirect('/')
                 else:
                         errmsg = "Check Your Credentials"
@@ -44,6 +47,6 @@ def logoutuser(request):
 
 @login_required(login_url='/home/')
 def userpage(request):
-    token_id={'token': Token.objects.get(user_id=request.user.id)}
+    token_id={'token': Token.objects.get(user_id=request.user.id), 'mailstat': mailstat.objects.get(user=request.user)}
     return render(request,"frontend/main.html",token_id)
 

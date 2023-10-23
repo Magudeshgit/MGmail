@@ -5,14 +5,16 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated
 from django.core.mail import EmailMessage, send_mail
 from django.conf import settings
+from .models import mailstat
 
 @api_view(('POST',))
 @authentication_classes([SessionAuthentication,TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def MGMail(request):
+    mail_stat=mailstat.objects.get(user=request.user)
+    print(mail_stat,mail_stat.count)
     subject = request.data.get('subject')
     content = request.data.get('content')
-    print(subject,content)
     email = send_mail(
         subject,
         content,
@@ -20,13 +22,6 @@ def MGMail(request):
         [request.user.email],
         fail_silently=False,
     ) 
-    # email = EmailMessage(
-    #     subject=subject,
-    #     body=content,
-    #     from_email=settings.EMAIL_HOST_USER,
-    #     to=["hemanthmailaccess@gmail.com"],
-    #     reply_to=["hemanthmailaccess@gmail.com"],
-    #     headers={'Content-Type': 'text/plain'},
-    # )
-
+    mail_stat.count +=1
+    mail_stat.save()
     return Response({'data': 'success'})
