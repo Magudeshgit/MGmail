@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-kco+m&f9cd$%6b$2#ru@-n)*^5sf4*l#v-&%2&c-zl7dm_ka--
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mgmail.pythonanywhere.com']
 
 
 # Application definition
@@ -134,10 +134,10 @@ STATICFILES_DIRS=[
 ]
 
 
-DEFAULT_FROM_EMAIL = "teammghmail@zohomail.in"
-EMAIL_HOST = "smtp.zoho.in"
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "teammgmail@zohomail.in"
-EMAIL_HOST_PASSWORD = "Senbagam@123"
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'teammghproduction@gmail.com'
+EMAIL_HOST_PASSWORD = 'bgds wukv vfkz vsqz'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
