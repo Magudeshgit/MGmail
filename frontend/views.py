@@ -13,14 +13,14 @@ def home(request):
 def signup(request):
         form = RegisterForm()
         if request.method == "POST":
-                print(request.POST)
+                #print(request.POST)
                 form = RegisterForm(request.POST)
                 if form.is_valid():
                         new_user = form.save()
                         new_user = authenticate(username=form.cleaned_data['username'],password=form.cleaned_data['password1'])
                         userobj = User.objects.get(username=form.cleaned_data['username'])
                         token = Token.objects.create(user=userobj)
-                        print("wallah.: ",token)
+                        #print("wallah.: ",token)
                         login(request, new_user)
                         mailstat.objects.create(user=userobj).save()
                         return redirect('/')

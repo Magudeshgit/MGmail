@@ -12,7 +12,6 @@ from .models import mailstat
 @permission_classes([IsAuthenticated])
 def MGMail(request):
     mail_stat=mailstat.objects.get(user=request.user)
-    print(mail_stat,mail_stat.count)
     subject = request.data.get('subject')
     content = request.data.get('content')
     email = send_mail(
