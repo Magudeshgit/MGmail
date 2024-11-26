@@ -11,16 +11,26 @@ from .models import mailstat
 @authentication_classes([SessionAuthentication,TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def MGMail(request):
-    mail_stat=mailstat.objects.get(user=request.user)
+    # mail_stat=mailstat.objects.get(user=request.user)
+    
+    
     subject = request.data.get('subject')
-    content = request.data.get('content')
-    email = send_mail(
+    body = request.data.get('body')
+    toAddress = request.data.get('toAddress')
+    
+    if toAddress == None:
+        return Response({'success': False, 'detail': "To Address not provided"})
+    print(subject,body, toAddress)
+    
+    send_mail(
         subject,
-        content,
+        body,
         settings.EMAIL_HOST_USER,
-        [request.user.email],
+        [toAddress],
         fail_silently=False,
     ) 
-    mail_stat.count +=1
-    mail_stat.save()
-    return Response({'data': 'success'})
+    
+    # mail_stat.count += 1
+    # mail_stat.save()
+    
+    return Response({'success': True, 'detail': "Mail sent"})

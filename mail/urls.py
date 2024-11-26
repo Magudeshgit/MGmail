@@ -23,10 +23,9 @@ from frontend import views as fd
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', fd.userpage),
-    path('Signup/', fd.signup),
-    path('Signin/', fd.signin),
-    path('home/', fd.home),
-    path('logout/', fd.logoutuser),
-
+    # path('Signup/', fd.signup),
+    # path('Signin/', fd.signin),
+    # path('home/', fd.home),
+    # path('logout/', fd.logoutuser),
     path('api/', api.MGMail),
 ]

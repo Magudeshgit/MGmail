@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-kco+m&f9cd$%6b$2#ru@-n)*^5sf4*l#v-&%2&c-zl7dm_ka--
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mgmail.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -1,0 +1,109 @@
+body
+{
+    width: 100vw;
+    overflow-x: hidden;
+}
+.parent
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.usergreet>p
+{
+    font-size: 3.2em;
+    font-family: "montserrat_bold";
+    color: white;
+}
+.abs
+{
+    font-family: 'montserrat_medium';
+    font-size: 1.6em;
+    color: white;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+}
+.token
+{
+    font-size: 1.6em;
+    font-family: "montserrat_regular";
+    color: white;
+}
+.tokenbox
+{
+    position: relative;
+    background: #3f3f3f;
+    min-width: 48em;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 2em;
+    margin-top: 5em;
+}
+.copy
+{
+    max-width: 5%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.reportbox
+{
+    position: relative;
+    background: #3f3f3f;
+    min-width: 45em;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 2em;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.reportbox>p
+{
+    font-size: 2.5em;
+    font-family: "montserrat_medium";
+    color: white;
+    text-decoration: underline;
+}
+.reportbox>ul
+{
+    width: 100%;
+}
+.copy2
+{
+    max-width: 3.5%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.reportbox>ul>li
+{
+    list-style: none;
+    font-family: "montserrat_regular";
+    font-size: 1.6em;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+}
+.toast
+{
+    width: 250px;
+    border-radius: 5px;
+    background: white;
+    border-bottom: 4.5px solid #a8e636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: -300px;
+    transition: 0.3s ease-out;
+}
+.toast>p
+{
+    font-size: 1.6em;
+    font-family: "montserrat_regular";
+}
